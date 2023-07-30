@@ -1,10 +1,31 @@
 body {
     font-family: Arial, sans-serif;
-}
-header, main, footer {
-    margin: 0 auto;
-    width: 80%;
-}
-h1, h2 {
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
     color: #333;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+input, button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
 }
