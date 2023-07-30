@@ -1,0 +1,10 @@
+body {
+    font-family: Arial, sans-serif;
+}
+header, main, footer {
+    margin: 0 auto;
+    width: 80%;
+}
+h1, h2 {
+    color: #333;
+}
