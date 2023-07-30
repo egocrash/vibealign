@@ -1,38 +1,34 @@
 // Get user input elements
-const desireInput = document.getElementById('desire-input');
-const emotionInput = document.getElementById('emotion-input');
+const desireInput = document.getElementById('desire');
+const emotionInput = document.getElementById('feelings');
 
-// Get button element
-const submitButton = document.getElementById('submit-button');
+// No need for submitButton as we are handling form submit event in HTML
 
-// Add event listener to the button
-submitButton.addEventListener('click', processInput);
-
-function processInput() {
-    // Get user input values
+// Function to process desire input
+function processDesireInput() {
+    // Get user input value
     const desire = desireInput.value;
-    const emotion = emotionInput.value;
 
-    // Check if the inputs are not empty
-    if (desire && emotion) {
+    // Check if the input is not empty
+    if (desire) {
         // Process the input
         // This is where we will add more functionality
-        console.log(`Desire: ${desire}, Emotion: ${emotion}`);
+        console.log(`Desire: ${desire}`);
     } else {
-        console.log("Please fill in both fields.");
+        console.log("Please fill in the desire field.");
     }
 }
 
-function processInput() {
-    // Get user input values
-    const desire = desireInput.value;
+// Function to process feeling input
+function processFeelingInput() {
+    // Get user input value
     const emotion = emotionInput.value;
 
-    // Check if the inputs are not empty
-    if (desire && emotion) {
+    // Check if the input is not empty
+    if (emotion) {
         // Process the input
         // We'll use the OpenAI API to generate a "vibration score"
-        generateVibrationScore(desire, emotion)
+        generateVibrationScore(emotion)
             .then(score => {
                 console.log(`Vibration Score: ${score}`);
                 // Here, you would typically update the UI with the vibration score
@@ -41,11 +37,11 @@ function processInput() {
                 console.error(`Error generating vibration score: ${error}`);
             });
     } else {
-        console.log("Please fill in both fields.");
+        console.log("Please fill in the feeling field.");
     }
 }
 
-function generateVibrationScore(desire, emotion) {
+function generateVibrationScore(emotion) {
     // This is a placeholder for the actual request to your server, which would then call the OpenAI API
     // The exact code would depend on the specifics of your server and how you have set up the API call
     return new Promise((resolve, reject) => {
@@ -55,3 +51,7 @@ function generateVibrationScore(desire, emotion) {
         }, 2000);
     });
 }
+
+// Make these functions global to access from index.html
+window.processDesireInput = processDesireInput;
+window.processFeelingInput = processFeelingInput;
