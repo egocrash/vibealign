@@ -19,7 +19,7 @@
         <section id="desire-input">
             <h2>What Do You Desire?</h2>
             <!-- Your Desire Input form goes here -->
-            <form>
+            <form onsubmit="event.preventDefault(); processDesireInput();">
                 <label for="desire">Your Desire:</label><br>
                 <input type="text" id="desire" name="desire"><br>
                 <input type="submit" value="Submit">
@@ -29,7 +29,7 @@
         <section id="feeling-identifier">
             <h2>Identify Your Feelings</h2>
             <!-- Your Feeling Identifier form goes here -->
-            <form>
+            <form onsubmit="event.preventDefault(); processFeelingInput();">
                 <label for="feelings">Your Feelings:</label><br>
                 <input type="text" id="feelings" name="feelings"><br>
                 <input type="submit" value="Identify">
